@@ -12,3 +12,5 @@
 ### Projeto Inova 100 - Frontend
 
 #### Aplicação frontend desenvolvida com React.
+<img width="320" height="316" alt="image" src="https://github.com/user-attachments/assets/2d61d493-8e73-4311-8881-6d9cc473d5bc" />
+
