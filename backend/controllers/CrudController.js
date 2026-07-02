@@ -32,7 +32,6 @@ class CrudController {
     criar = async (req, res) => {
         try {
             const registro = await this.model.create(req.body);
-
             res.status(201).json(registro);
         } catch (err) {
             res.status(500).json({ erro: err.message });
@@ -41,19 +40,15 @@ class CrudController {
 
     atualizar = async (req, res) => {
         try {
-            await this.model.update(
-                req.body,
-                {
-                    where: {
-                        [this.primaryKey]: req.params.id
-                    }
+            await this.model.update(req.body, {
+                where: {
+                    [this.primaryKey]: req.params.id
                 }
-            );
+            });
 
             const registro = await this.model.findByPk(req.params.id);
 
             res.json(registro);
-
         } catch (err) {
             res.status(500).json({ erro: err.message });
         }
@@ -61,7 +56,6 @@ class CrudController {
 
     excluir = async (req, res) => {
         try {
-
             await this.model.destroy({
                 where: {
                     [this.primaryKey]: req.params.id
@@ -71,7 +65,6 @@ class CrudController {
             res.json({
                 mensagem: 'Registro removido com sucesso'
             });
-
         } catch (err) {
             res.status(500).json({ erro: err.message });
         }
