@@ -1,7 +1,7 @@
 # Projeto Inova 100 - Cadastro de Participantes da Feira
 
 ### Projeto Inova 100 - Backend
-<img width="139" height="281" alt="image" src="https://github.com/user-attachments/assets/4db3c9ff-da75-446a-a983-5897d2948d41" />
+<img width="195" height="240" alt="image" src="https://github.com/user-attachments/assets/c413ad61-725e-42c6-86ff-c234ee499d36" />
 
 ### Endpoint
 <img width="191" height="593" alt="image" src="https://github.com/user-attachments/assets/8a93ff77-68ec-4610-8166-7d1145a71ec0" />
