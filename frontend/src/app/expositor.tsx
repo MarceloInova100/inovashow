@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function PessoaScreen() {
+export default function expositor() {
   return (
     <View>
-      <Text>Cadastro de Pessoas</Text>
+      <Text>Cadastro de Expositores</Text>
     </View>
   );
 }

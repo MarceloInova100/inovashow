@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function DashboardScreen({ navigation }: any) {
+export default function dashboard({ navigation }: any) {
   const cards = [
     { title: 'Cidades', total: 120 },
     { title: 'Expositores', total: 45 },
