@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Pressable, Text, StyleSheet, Alert } from 'react-native';
 import { router } from 'expo-router';
 
 const menus = [
@@ -10,31 +10,73 @@ const menus = [
   { title: "Visita", route: "/visita" },
 ] as const;
 
-export default function Home() {
+
+export default function HomeScreen() {
+  const abrirTela = (index: string | undefined) => {
+    Alert.alert('Botão clicado', index);
+  };
+
   return (
-    <View style={{ flex: 1, padding: 20, backgroundColor: "#f8f9fa" }}>
-      {menus.map((item) => (
-        <TouchableOpacity
-          key={item.route}
-          style={{
-            backgroundColor: "#0d6efd", // btn-primary
-            padding: 12,
-            borderRadius: 6,
-            marginBottom: 10,
-          }}
-          onPress={() => router.push(item.route)}
-        >
-          <Text
-            style={{
-              color: "#fff",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-          >
-            {item.title}
-          </Text>
-        </TouchableOpacity>
-      ))}
+    <View style={styles.container}>
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Dashboard')}
+      >
+        <Text style={styles.text}>Dashboard</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Cidade')}
+      >
+        <Text style={styles.text}>Cidade</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Expositor')}
+      >
+        <Text style={styles.text}>Expositor</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Pessoa')}
+      >
+        <Text style={styles.text}>Pessoa</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Vendedor')}
+      >
+        <Text style={styles.text}>Vendedor</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => abrirTela('Visita')}
+      >
+        <Text style={styles.text}>Visita</Text>
+      </Pressable>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  button: {
+    backgroundColor: '#2196F3',
+    borderRadius: 8,
+    padding: 15,
+    marginBottom: 10,
+  },
+  text: {
+    color: '#FFF',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+});
