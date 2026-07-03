@@ -15,16 +15,7 @@ export default function dashboard({ navigation }: any) {
     { title: 'Vendedores', total: 18 },
     { title: 'Visitas', total: 340 },
   ];
-
-  const menus = [
-    'Dashboard',
-    'Cidade',
-    'Expositor',
-    'Pessoa',
-    'Vendedor',
-    'Visita',
-  ];
-
+  
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Dashboard</Text>
@@ -36,18 +27,6 @@ export default function dashboard({ navigation }: any) {
         </View>
       ))}
 
-      <Text style={styles.subtitle}>Menus</Text>
-
-      <View style={styles.menuContainer}>
-        {menus.map(menu => (
-          <TouchableOpacity
-            key={menu}
-            style={styles.menuButton}
-            onPress={() => navigation.navigate(menu)}>
-            <Text style={styles.menuText}>{menu}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
     </ScrollView>
   );
 }
