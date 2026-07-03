@@ -33,7 +33,7 @@ export default function PessoaForm() {
   const handleChange = (campo: string, valor: string) => {
     setForm({
       ...form,
-      valor,
+      //valor,
     });
   };
 
