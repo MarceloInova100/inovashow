@@ -1,4 +1,4 @@
-package com.frontend_app.frontend_app
+package com.frontend_app
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

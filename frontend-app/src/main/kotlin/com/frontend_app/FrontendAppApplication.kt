@@ -1,4 +1,4 @@
-package com.frontend_app.frontend_app
+package com.frontend_app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
