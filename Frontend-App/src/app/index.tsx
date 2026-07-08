@@ -39,8 +39,7 @@ export default function HomeScreen() {
         <Text style={styles.text}>Expositor</Text>
       </Pressable>
 
-      <div>
-            <Pressable
+      <Pressable
               style={styles.button}
               onPress={() => abrirTela('Pessoa')}
             >
@@ -60,8 +59,6 @@ export default function HomeScreen() {
             >
               <Text style={styles.text}>Visita</Text>
             </Pressable>
-      </div>
-      
     </View>
   );
 }
