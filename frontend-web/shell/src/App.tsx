@@ -1,14 +1,17 @@
-import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Menu } from "./layout/Menu";
+import { AppRoutes } from "./routes/AppRoutes";
 
-import "./index.css";
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Menu />
 
-const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: shell</div>
-    <div>Framework: react-19</div>
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
-
-root.render(<App />);
+        <main>
+          <AppRoutes />
+        </main>
+      </div>
+    </BrowserRouter>
+  );
+}

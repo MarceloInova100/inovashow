@@ -1,5 +1,7 @@
 export const mfConfig = {
-  name: "mfe_pessoa",
-  exposes: {},
-  shared: ["react", "react-dom"],
+  name: "pessoa",
+  
+exposes: {
+    "./PessoaApp": "./src/App",
+  },
 };
