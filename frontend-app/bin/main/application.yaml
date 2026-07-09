@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: frontend-app
-
-api:
-  dashboard:
-    url: http://localhost:3000/api
-
