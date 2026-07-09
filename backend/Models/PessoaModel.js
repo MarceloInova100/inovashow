@@ -4,91 +4,265 @@ const sequelize = require('../config/database');
 const PessoaModel = sequelize.define(
   'Pessoa',
   {
-    codpessoa: {
+    CODCLIFOR: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    catvisitante: {
-      type: DataTypes.STRING(50),
-    },
-    cidade: {
-      type: DataTypes.STRING(100),
-    },
-    cod_tra: {
-      type: DataTypes.INTEGER,
-    },
-    nome: {
-      type: DataTypes.STRING(150),
-      allowNull: false,
-    },
-    cpf: {
-      type: DataTypes.STRING(14),
-    },
-    rg: {
-      type: DataTypes.STRING(20),
-    },
-    datanascimento: {
-      type: DataTypes.DATEONLY,
-    },
-    sexo: {
-      type: DataTypes.STRING(1),
-    },
-    telefone: {
-      type: DataTypes.STRING(20),
-    },
-    email: {
-      type: DataTypes.STRING(150),
-    },
-    estado: {
-      type: DataTypes.STRING(2),
-    },
-    expositor: {
-      type: DataTypes.STRING(150),
-    },
-    empresa: {
-      type: DataTypes.STRING(150),
-    },
-    cargo: {
-      type: DataTypes.STRING(100),
-    },
-    endereco: {
-      type: DataTypes.STRING(200),
-    },
-    bairro: {
-      type: DataTypes.STRING(100),
-    },
-    cep: {
-      type: DataTypes.STRING(10),
-    },
-    codcidade: {
-      type: DataTypes.INTEGER,
-    },
-    codestado: {
-      type: DataTypes.INTEGER,
-    },
-    codpais: {
-      type: DataTypes.INTEGER,
-    },
-    codvendedor: {
-      type: DataTypes.INTEGER,
-    },
-    codexpositor: {
-      type: DataTypes.INTEGER,
-    },
-    codcategoria: {
-      type: DataTypes.INTEGER,
-    },
-    codsetor: {
-      type: DataTypes.INTEGER,
-    },
-    situcliente: {
-      type: DataTypes.STRING(20),
-    },
+
+    NOME: DataTypes.STRING(150),
+    CODCONTAFINCLI: DataTypes.INTEGER,
+    CODMOEDA: DataTypes.INTEGER,
+    CGCCPF: DataTypes.STRING(20),
+    PESSOA: DataTypes.STRING(1),
+
+    CODCONTA1: DataTypes.INTEGER,
+    CODCONTA2: DataTypes.INTEGER,
+    CODCONTA3: DataTypes.INTEGER,
+    CODCONTA4: DataTypes.INTEGER,
+    CODCONTA5: DataTypes.INTEGER,
+    CODCONTA6: DataTypes.INTEGER,
+    CODCONTA7: DataTypes.INTEGER,
+    CODCONTA8: DataTypes.INTEGER,
+
+    CODUSUCAD: DataTypes.INTEGER,
+    CODUSUALT: DataTypes.INTEGER,
+
+    DATAHORACAD: DataTypes.DATE,
+    DATAHORAALT: DataTypes.DATE,
+    DATAHORAREPLICA: DataTypes.DATE,
+
+    EGERENTE: DataTypes.STRING(1),
+    CODFILIAL: DataTypes.INTEGER,
+    ECLIENTE: DataTypes.STRING(1),
+    EFORNECED: DataTypes.STRING(1),
+    EVENDEDOR: DataTypes.STRING(1),
+    ETRANSPORTADOR: DataTypes.STRING(1),
+
+    DPRIVENDA: DataTypes.DATE,
+    DULTVENDA: DataTypes.DATE,
+
+    CODGERENTE: DataTypes.INTEGER,
+
+    CLIENTE_ATIVO: DataTypes.STRING(1),
+    LIMCREDITO: DataTypes.DECIMAL(15, 2),
+
+    FORNECEDOR_ATIVO: DataTypes.STRING(1),
+
+    DATALIMCREDITO: DataTypes.DATE,
+
+    GERENTE_ATIVO: DataTypes.STRING(1),
+    VENDEDOR_ATIVO: DataTypes.STRING(1),
+
+    CLASSIFICA: DataTypes.STRING(50),
+
+    TRANSP_ATIVO: DataTypes.STRING(1),
+
+    DPRICOMPRA: DataTypes.DATE,
+    DULTCOMPRA: DataTypes.DATE,
+
+    CODCONTAFINFOR: DataTypes.INTEGER,
+
+    DIACOMI: DataTypes.INTEGER,
+    VCTOLIMCREDITO: DataTypes.INTEGER,
+
+    TIPOJURO: DataTypes.STRING(10),
+    TIPOANTEC: DataTypes.STRING(10),
+
+    BS_USUARIO: DataTypes.STRING(100),
+    BS_SENHA: DataTypes.STRING(100),
+
+    CODCONTAFINTRA: DataTypes.INTEGER,
+
+    JUROSCUSTO: DataTypes.DECIMAL(10, 4),
+    JUROSVENDA: DataTypes.DECIMAL(10, 4),
+
+    ENDERECO: DataTypes.STRING(200),
+    BAIRRO: DataTypes.STRING(100),
+
+    CODCIDADE: DataTypes.INTEGER,
+
+    CEP: DataTypes.STRING(10),
+    CAIXAPOSTAL: DataTypes.STRING(50),
+
+    TELEFONE: DataTypes.STRING(20),
+    FAX: DataTypes.STRING(20),
+    CELULAR: DataTypes.STRING(20),
+
+    EMAIL: DataTypes.STRING(150),
+
+    CODAGRUPADOR: DataTypes.INTEGER,
+    CODCOBRADOR: DataTypes.INTEGER,
+    CODTIPOCLIFOR: DataTypes.INTEGER,
+    CODSETOR: DataTypes.INTEGER,
+
+    CARTEIRACOB: DataTypes.STRING(50),
+
+    ELEVCAPITAL: DataTypes.STRING(1),
+    PROTESTO: DataTypes.STRING(1),
+
+    OBSFATURA: DataTypes.TEXT,
+
+    RETIMPDESCNF: DataTypes.STRING(1),
+
+    CODCCUSTO: DataTypes.INTEGER,
+    CODMOBCLIFOR: DataTypes.INTEGER,
+    CODEMPRESA: DataTypes.INTEGER,
+    CODUNIDPRINCIPAL: DataTypes.INTEGER,
+
+    PERCCOMISSAO: DataTypes.DECIMAL(10, 4),
+    PERCCUSTOVARIAVEL: DataTypes.DECIMAL(10, 4),
+
+    NOMEFANTASIA: DataTypes.STRING(150),
+
+    CODGRUPOCLIFOR: DataTypes.INTEGER,
+
+    CATEGORIACLIFOR: DataTypes.STRING(50),
+
+    DATAFATURA: DataTypes.DATE,
+
+    DIASFATURA: DataTypes.INTEGER,
+
+    CUSTOHORA: DataTypes.DECIMAL(15, 2),
+    CUSTOFIXOVENDEDOR: DataTypes.DECIMAL(15, 2),
+
+    DHALTERACAO: DataTypes.DATE,
+
+    BIOGENESISBLOQ: DataTypes.STRING(1),
+
+    SALDOCREDITO: DataTypes.DECIMAL(15, 2),
+
+    PROXVCTO: DataTypes.DATE,
+
+    STATUSFIN: DataTypes.STRING(20),
+
+    DATAROATIVACOES: DataTypes.DATE,
+    DATAROFATURAMENTO: DataTypes.DATE,
+    DATAROMIXPROD: DataTypes.DATE,
+
+    DIASLIMITEFATURA: DataTypes.INTEGER,
+
+    TIPORECFUNRURAL: DataTypes.STRING(20),
+
+    DADOSLIMINARFUNRURAL: DataTypes.TEXT,
+
+    CODBARRASCLIENTE: DataTypes.STRING(100),
+
+    LIMCREDITOVENDEDOR: DataTypes.DECIMAL(15, 2),
+
+    COMPL: DataTypes.STRING(100),
+
+    NUMERO: DataTypes.STRING(20),
+
+    TIPOCLIRETENCAO: DataTypes.STRING(20),
+
+    ECOOPERADO: DataTypes.STRING(1),
+
+    REGISTROCOOP: DataTypes.STRING(50),
+
+    PARTICIPACOOP: DataTypes.DECIMAL(15, 2),
+
+    LOGRADOURO: DataTypes.STRING(100),
+
+    COBRANCACENTRALIZADA: DataTypes.STRING(1),
+
+    UNIDQTDCLIFOR: DataTypes.INTEGER,
+
+    CLIENTEAVISTA: DataTypes.STRING(1),
+
+    LIMCREDITOVERAO: DataTypes.DECIMAL(15, 2),
+    LIMCREDITOINVERNO: DataTypes.DECIMAL(15, 2),
+
+    EREPRESENTANTE: DataTypes.STRING(1),
+
+    VLRCOMISSAOTON: DataTypes.DECIMAL(15, 2),
+
+    CODAREACOMERCIAL: DataTypes.INTEGER,
+
+    CLASSEREPBIO: DataTypes.STRING(20),
+
+    CAPVISITA: DataTypes.INTEGER,
+
+    CODMATRICULAASSOCIADO: DataTypes.STRING(50),
+
+    CODCONTACOOPERADO: DataTypes.INTEGER,
+
+    COEFVALORPOTENCIAL: DataTypes.DECIMAL(15, 4),
+
+    SUBAGENTEBOLETO: DataTypes.STRING(1),
+
+    PLATAFORMAID: DataTypes.INTEGER,
+
+    BLOQUEARFATURAMENTO: DataTypes.STRING(1),
+
+    CODCONTAINTEGRALIZAR: DataTypes.INTEGER,
+
+    COR: DataTypes.STRING(30),
+
+    SINCAGROMETRIKA: DataTypes.STRING(1),
+
+    AGROMETRIKATIPOCLI: DataTypes.STRING(20),
+
+    AGROMETRIKAINIATIVAGRI: DataTypes.STRING(100),
+
+    AGROMETRIKADATACONST: DataTypes.DATE,
+
+    BONUSQUEBRA: DataTypes.DECIMAL(15, 2),
+
+    IDEXPORTACAOJDE: DataTypes.STRING(100),
+
+    ENVIADOJDE: DataTypes.STRING(1),
+
+    DATAVALIDADECND: DataTypes.DATE,
+
+    NUMEROCND: DataTypes.STRING(50),
+
+    LOTEENVIOJDE: DataTypes.STRING(50),
+
+    CODGRUPOCONTAREC: DataTypes.INTEGER,
+    TIPOGRUPOCONTAREC: DataTypes.STRING(20),
+
+    CODGRUPOCONTAPAG: DataTypes.INTEGER,
+    TIPOGRUPOCONTAPAG: DataTypes.STRING(20),
+
+    CONTRIBUINTECPRB: DataTypes.STRING(1),
+
+    IDSALESFORCE: DataTypes.STRING(100),
+
+    LIMITECREDITOATUAL: DataTypes.DECIMAL(15, 2),
+
+    DATAHORALIMITECREDITO: DataTypes.DATE,
+
+    CODGRUPOCLIFOREND: DataTypes.INTEGER,
+
+    INTEGRACAOAGROTISTRADER: DataTypes.STRING(1),
+
+    EMAILNFE: DataTypes.STRING(150),
+
+    CLIFORPATH: DataTypes.STRING(255),
+
+    TIPOTOLERANCIACREDITO: DataTypes.STRING(20),
+
+    TOLERANCIACREDITO: DataTypes.DECIMAL(15, 2),
+
+    CODSAFRA: DataTypes.INTEGER,
+
+    ATUALIZAFINANCEIRO: DataTypes.STRING(1),
+
+    CODAGRUPADORLIMITECREDITO: DataTypes.INTEGER,
+
+    IDTARKEN: DataTypes.STRING(100),
+
+    SINCTARKEN: DataTypes.STRING(1),
+
+    DESCONSIDERARVALORMINIMOIRRF: DataTypes.STRING(1),
+
+    CODFUNRURAL: DataTypes.INTEGER
   },
   {
     tableName: 'pessoa',
     timestamps: false,
+    freezeTableName: true
   }
 );
 

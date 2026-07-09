@@ -1,0 +1,11 @@
+select c.codclifor, u.nome, u.nomefantasia, u.CGCCPF, u.ENDERECO,u. BAIRRO, u.CODCIDADE,u.cep,u.FONE, u.CELULAR,
+u.EMAIL,u.LOGRADOURO
+from clifor c
+inner join unidclifor u on u.codclifor = c.CODCLIFOR
+where c.ECLIENTE =1 and c.EFORNECED = 1 and c.EVENDEDOR = 1
+order by u.nome
+
+INSERT INTO hom_inv_gerencial.dbo.CLIFOR
+(CODCLIFOR, NOME, CGCCPF, EFORNECED, FORNECEDOR_ATIVO,ENDERECO, BAIRRO, CODCIDADE, CEP,TELEFONE, CELULAR, EMAIL, NOMEFANTASIA, COMPL, NUMERO,  
+LOGRADOURO, )
+VALUES(0, '', '', '', '', 0, '', '', '', '', 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, '', 0, '', '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', '', '', '', 0, 0, 0, 0, '', 0, 0, ?, 0, '', '', 0, 0, ?, ?, ?, '', ?, '', '', 0, 0, ?, 0, ?, ?, ?, ?, ?, ?, ?, 0, ?, '', ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?, '', ?, '', ?, '', 0, 0, '', ?, ?, ?, ?, '', ?, '', '', '', '', ?, '', 0, '', '', ?, '', ?, ?, ?, ?, ?, ?, ?, ?, ?, 0);
