@@ -5,11 +5,12 @@ function HomeView() {
 
   return (
     <div className='home-container'>
+
         <div className='menu'>
             
             <div className="header">
                 <h1>Inova - Show</h1>
-                <p>Bem-vindo ao InovaShow!</p>
+                <p>Bem-vindo ao Inova Show Safrinha 2026!</p>
                 <p>Escolha uma opção abaixo:</p>
             </div>
 
@@ -34,6 +35,7 @@ function HomeView() {
             </button>
 
         </div>
+        
     </div>
   );
 }

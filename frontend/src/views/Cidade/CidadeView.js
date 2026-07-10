@@ -17,14 +17,20 @@ function CidadeView() {
 
   return (
     <div className="App">
-      <h1>Lista de Cidades</h1>
+      <div>
+        <h1 className="titulo">Lista de Cidades</h1>
+      </div>
+      <div className="cidade-list">
       <ul>
         {cidades.map(c => <li key={c.id}>{c.name}</li>)}
       </ul>
-      <button className="btn btn-success" onClick={handleAdd}>Criar</button>
-      <button className="btn btn-primary">Ler</button>
-      <button className="btn btn-warning">Atualizar</button>
-      <button className="btn btn-danger">Excluir</button>
+      </div>
+      <div className="button-container">
+        <button className="btn btn-success" onClick={handleAdd}>Criar</button>
+        <button className="btn btn-primary">Ler</button>
+        <button className="btn btn-warning">Atualizar</button>
+        <button className="btn btn-danger">Excluir</button>
+      </div>
     </div>
   );
 }

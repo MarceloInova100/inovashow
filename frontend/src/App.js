@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './style.css';
 
 import HomeView from './views/HomeView';
-import CidadeView from './views/CidadeView';
+import CidadeView from './views/Cidade/CidadeView';
+import CidadeCadastroView from './views/Cidade/CidadeCadastroView';
 import ExpositorView from './views/ExpositorView';
 import PessoaView from './views/PessoaView';
 import VendedorView from './views/VendedorView';
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/cidade" element={<CidadeView />} />
+          <Route path="/cidade/cadastrar" element={<CidadeCadastroView />} />
           <Route path="/expositor" element={<ExpositorView />} />
           <Route path="/pessoa" element={<PessoaView />} />
           <Route path="/vendedor" element={<VendedorView />} />
