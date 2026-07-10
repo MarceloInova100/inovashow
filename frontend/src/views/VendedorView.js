@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUsers, addUser } from '../controllers/userController';
+import { fetchVendedores, addVendedor } from '../controllers/VendedorController';
 import '../style.css';
 
-function UserView() {
-  const [users, setUsers] = useState([]);
+function VendedorView() {
+  const [vendedores, setVendedores] = useState([]);
 
   useEffect(() => {
-    fetchUsers().then(setUsers);
+    fetchVendedores().then(setVendedores);
   }, []);
 
   const handleAdd = async () => {
-    const newUser = { name: "Novo Usuário" };
-    const created = await addUser(newUser);
-    setUsers([...users, created]);
+    const newVendedor = { name: "Novo Vendedor" };
+    const created = await addVendedor(newVendedor);
+    setVendedores([...vendedores, created]);
   };
 
   return (
     <div className="App">
-      <h1>Lista de Usuários</h1>
+      <h1>Lista de Vendedores</h1>
       <ul>
-        {users.map(u => <li key={u.id}>{u.name}</li>)}
+        {vendedores.map(e => <li key={e.id}>{e.name}</li>)}
       </ul>
       <button className="btn btn-success" onClick={handleAdd}>Criar</button>
       <button className="btn btn-primary">Ler</button>
@@ -29,4 +29,4 @@ function UserView() {
   );
 }
 
-export default UserView;
+export default VendedorView;

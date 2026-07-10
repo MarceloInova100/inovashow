@@ -80,8 +80,6 @@ const PessoaModel = sequelize.define(
     ENDERECO: DataTypes.STRING(200),
     BAIRRO: DataTypes.STRING(100),
 
-    CODCIDADE: DataTypes.INTEGER,
-
     CEP: DataTypes.STRING(10),
     CAIXAPOSTAL: DataTypes.STRING(50),
 

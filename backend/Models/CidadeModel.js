@@ -5,12 +5,6 @@ const sequelize = require('../config/database');
 const CidadeModel = sequelize.define(
   'Cidade',
   {
-    CODCIDADE: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-
     UF: {
       type: DataTypes.STRING(2),
       allowNull: false,

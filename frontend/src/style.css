@@ -5,12 +5,36 @@ body {
   background-color: #000; /* preto */
   color: #FFD700; /* amarelo dourado */
   font-family: Arial, sans-serif;
-  margin: 20px;   /* margem em toda a página */
-  padding: 20px;  /* padding em toda a página */
+  margin: 10px;
+  padding: 5px;
+}
+
+/* Container principal da aplicação */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Home */
+.home-container {
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #FFD700; /* segue o tema dourado */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* Títulos */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #FFD700;
 }
 
@@ -19,43 +43,47 @@ a {
   color: #FFD700;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* Botões CRUD usando Bootstrap + padding + tamanho uniforme */
+/* Botões CRUD */
 button,
 .btn-create,
 .btn-read,
 .btn-update,
 .btn-delete {
-  padding: 10px 20px;   /* padding interno dos botões */
+  padding: 20px 20px;
   border: none;
-  border-radius: 5px;   /* cantos arredondados */
+  border-radius: 5px;
   cursor: pointer;
-  margin: 5px;          /* espaço entre botões */
-  width: 150px;         /* largura fixa para todos os botões */
-  text-align: center;   /* centraliza o texto */
+  margin: 5px;
+  width: 150px;
+  text-align: center;
 }
 
-/* Botões CRUD com cores */
+/* Botão Create */
 .btn-create {
-  background-color: #28a745; /* verde */
+  background-color: #28a745;
   color: #fff;
 }
 
+/* Botão Read */
 .btn-read {
-  background-color: #007bff; /* azul */
+  background-color: #007bff;
   color: #fff;
 }
 
+/* Botão Update */
 .btn-update {
-  background-color: #ffc107; /* amarelo/laranja */
+  background-color: #ffc107;
   color: #000;
 }
 
+/* Botão Delete */
 .btn-delete {
-  background-color: #dc3545; /* vermelho */
+  background-color: #dc3545;
   color: #fff;
 }
 
@@ -66,8 +94,113 @@ button,
     padding: 10px;
   }
 
-  button {
-    width: 100%; /* botões ocupam toda a largura no mobile */
+  button,
+  .btn-create,
+  .btn-read,
+  .btn-update,
+  .btn-delete {
+    width: 100%;
     margin-bottom: 10px;
+  }
+
+  .home-container h1 {
+    font-size: 32px;
+  }
+
+  /* Imagem abaixo do menu */
+  .home-image {
+    display: block;
+    margin: 35px auto 0 auto;
+
+    max-width: 90%;
+    width: 500px;
+
+    height: auto;
+
+    border-radius: 15px;
+
+    box-shadow:
+      0 0 15px rgba(255, 215, 0, 0.4),
+      0 0 30px rgba(255, 215, 0, 0.2);
+  }
+    .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu a {
+    display: inline-block;
+
+    padding: 12px 35px;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    border-radius: 30px;
+    border: 2px solid #b8860b;
+
+    background: linear-gradient(
+      to bottom,
+      #ffe66d 0%,
+      #ffd700 45%,
+      #e6b800 55%,
+      #c99700 100%
+    );
+
+    box-shadow:
+      inset 0 3px 6px rgba(255,255,255,0.5),
+      0 4px 10px rgba(255,215,0,0.5);
+
+    text-shadow:
+      1px 1px 2px rgba(0,0,0,0.5);
+
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  /* Faixa brilhante superior */
+  .menu a::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 8%;
+    width: 84%;
+    height: 35%;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.35);
+  }
+
+  /* Hover */
+  .menu a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+      inset 0 3px 6px rgba(255,255,255,0.6),
+      0 0 15px #ffd700,
+      0 0 30px #ffd700;
+  }
+
+  /* Menu ativo */
+  .menu a.active {
+    background: linear-gradient(
+      to bottom,
+      #fff18f,
+      #ffd700,
+      #e6b800
+    );
+
+    box-shadow:
+      0 0 15px #ffd700,
+      0 0 30px #ffd700,
+      0 0 45px #ffd700;
   }
 }
