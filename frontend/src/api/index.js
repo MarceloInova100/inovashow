@@ -10,10 +10,6 @@ export const cidadeAPI = axios.create({
   baseURL: `${BASE_URL}/cidade`,
 });
 
-export const cidadeCadastroAPI = axios.create({
-  baseURL: `${BASE_URL}/cidade/cadastro`,
-});
-
 export const expositorAPI = axios.create({
   baseURL: `${BASE_URL}/expositor`,
 });

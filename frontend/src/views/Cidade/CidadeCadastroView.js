@@ -1,83 +1,50 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../style.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { addCidade } from "../../controllers/CidadeController";
+import "../style.css";
 
 function CidadeCadastroView() {
   const navigate = useNavigate();
 
-  const [cidade, setCidade] = useState({
-    nome: '',
-    uf: ''
-  });
+  const [nome, setNome] = useState("");
+  const [uf, setUf] = useState("");
 
-  const handleChange = (e) => {
-    setCidade({
-      ...cidade,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleSalvar = async () => {
+    const novaCidade = { name: nome, uf: uf };
+    const created = await addCidade(novaCidade);
 
-  const handleSalvar = async (e) => {
-    e.preventDefault();
-
-    try {
-      console.log(cidade);
-
-      // Exemplo de chamada API
-      // await api.post('/cidades', cidade);
-
-      alert('Cidade cadastrada com sucesso!');
-      navigate('/cidade');
-    } catch (error) {
-      console.error(error);
-      alert('Erro ao cadastrar cidade');
+    if (created) {
+      alert("Cidade cadastrada com sucesso!");
+      navigate("/cidade"); // volta para a lista
+    } else {
+      alert("Erro ao cadastrar cidade.");
     }
   };
 
   return (
-    <div className="container">
-      <h1 style={{ color: 'yellow' }}>
-        Cadastro de Cidade
-      </h1>
+    <div className="App">
+      <h1 className="titulo">Cadastro de Cidade</h1>
 
-      <form onSubmit={handleSalvar}>
-        <div>
-          <label>Nome:</label>
-          <input
-            type="text"
-            name="nome"
-            value={cidade.nome}
-            onChange={handleChange}
-            required
-          />
+      <div className="form-cidade">
+        <label>Nome:</label>
+        <input
+          type="text"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+        />
+
+        <label>UF:</label>
+        <input
+          type="text"
+          value={uf}
+          onChange={(e) => setUf(e.target.value)}
+        />
+
+        <div className="botoes">
+          <button onClick={handleSalvar}>Salvar</button>
+          <button onClick={() => navigate("/cidade")}>Voltar</button>
         </div>
-
-        <div>
-          <label>UF:</label>
-          <input
-            type="text"
-            name="uf"
-            value={cidade.uf}
-            onChange={handleChange}
-            maxLength="2"
-            required
-          />
-        </div>
-
-        <div style={{ marginTop: '20px' }}>
-          <button type="submit">
-            Salvar
-          </button>
-
-          <button
-            type="button"
-            onClick={() => navigate('/cidade')}
-            style={{ marginLeft: '10px' }}
-          >
-            Voltar
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
