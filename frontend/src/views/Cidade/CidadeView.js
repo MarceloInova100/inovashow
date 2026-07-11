@@ -32,10 +32,10 @@ function CidadeView() {
       </div>
 
       <div className="menu-botoes">
-        <button className="btn-create" onClick={() => navigate("/cidade/cadastrar")}>Criar</button>
-        <button className="btn-read">Ler</button>
+        <button className="btn-create" onClick={() => navigate("/cidade/cadastrar")}>Cadastrar</button>
+        <button className="btn-read">Pesquisar</button>
         <button className="btn-update">Atualizar</button>
-        <button className="btn-delete">Excluir</button>
+        <button className="btn-voltar" onClick={() => navigate("/")}>Voltar</button>
       </div>
     </div>
 
