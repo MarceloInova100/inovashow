@@ -19,28 +19,26 @@ function CidadeView() {
     <div className="App">
       <h1 className="titulo">Lista de Cidades</h1>
 
-      {/* Botões CRUD */}
-      <div className="menu-botoes">
-        <button onClick={() => navigate("/cidade/cadastrar")}>Criar</button>
-        <button onClick={() => alert("Função de leitura ainda não implementada")}>Ler</button>
-        <button onClick={() => alert("Função de atualização ainda não implementada")}>Atualizar</button>
-        <button onClick={() => alert("Função de exclusão ainda não implementada")}>Excluir</button>
-      </div>
-
-      {/* Lista de cidades */}
-      <div className="cidade-list">
+      <div className="lista-container">
         <ul>
-          {Array.isArray(cidades) &&
-            cidades.map((c, index) =>
-              c && c.name ? (
-                <li key={c.id || index}>
-                  {c.name} {c.uf ? `(${c.uf})` : ""}
-                </li>
-              ) : null
-            )}
+          {cidades.map((c, index) =>
+            c && c.name ? (
+              <li key={c.id || index}>
+                {c.name} {c.uf ? `(${c.uf})` : ""}
+              </li>
+            ) : null
+          )}
         </ul>
       </div>
+
+      <div className="menu-botoes">
+        <button className="btn-create" onClick={() => navigate("/cidade/cadastrar")}>Criar</button>
+        <button className="btn-read">Ler</button>
+        <button className="btn-update">Atualizar</button>
+        <button className="btn-delete">Excluir</button>
+      </div>
     </div>
+
   );
 }
 

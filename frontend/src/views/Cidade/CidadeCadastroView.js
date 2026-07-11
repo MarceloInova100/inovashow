@@ -5,7 +5,6 @@ import "../style.css";
 
 function CidadeCadastroView() {
   const navigate = useNavigate();
-
   const [nome, setNome] = useState("");
   const [uf, setUf] = useState("");
 
@@ -15,7 +14,7 @@ function CidadeCadastroView() {
 
     if (created) {
       alert("Cidade cadastrada com sucesso!");
-      navigate("/cidade"); // volta para a lista
+      navigate("/cidade");
     } else {
       alert("Erro ao cadastrar cidade.");
     }
@@ -39,11 +38,11 @@ function CidadeCadastroView() {
           value={uf}
           onChange={(e) => setUf(e.target.value)}
         />
+      </div>
 
-        <div className="botoes">
-          <button onClick={handleSalvar}>Salvar</button>
-          <button onClick={() => navigate("/cidade")}>Voltar</button>
-        </div>
+      <div className="botoes">
+        <button className="btn-salvar" onClick={handleSalvar}>Salvar</button>
+        <button className="btn-voltar" onClick={() => navigate("/cidade")}>Voltar</button>
       </div>
     </div>
   );
