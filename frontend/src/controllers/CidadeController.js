@@ -1,6 +1,6 @@
 import { cidadeAPI } from "../api/index";
 
-export const fetchCidades = async () => {
+export const fetchCidades = async (cidades) => {
   try {
     const res = await cidadeAPI.get("/");
     return res.data;
@@ -11,9 +11,9 @@ export const fetchCidades = async () => {
   }
 };
 
-export const addCidade = async (cidade) => {
+export const addCidade = async (cadastrar) => {
   try {
-    const res = await cidadeAPI.post("/", cidade);
+    const res = await cidadeAPI.post("/", cadastrar);
     return res.data;
   } catch (error) {
     console.error("Erro ao adicionar cidade:", error);

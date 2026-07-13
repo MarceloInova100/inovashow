@@ -1,16 +1,13 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addCidade } from '../../controllers/CidadeController';
-import '../style.css';
+import '../../style.css';
 
 function CidadeCadastroView() {
   const navigate = useNavigate();
 
   const [cidade, setCidade] = useState({
-    name: '',
-    estado: '',
-    populacao: ''
+    nome: '',
+    uf: ''
   });
 
   const handleChange = (e) => {
@@ -20,66 +17,66 @@ function CidadeCadastroView() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSalvar = async (e) => {
     e.preventDefault();
 
-    if (!cidade.name.trim()) {
-      alert('Por favor, preencha todos os campos!');
-      return;
-    }
-
     try {
-      await addCidade(cidade);
+      console.log(cidade);
+
+      // Exemplo de chamada API
+      // await api.post('/cidades', cidade);
+
       alert('Cidade cadastrada com sucesso!');
       navigate('/cidade');
     } catch (error) {
       console.error(error);
-      alert('Erro ao cadastrar cidade.');
+      alert('Erro ao cadastrar cidade');
     }
   };
 
   return (
-    <div className="form-container">
-      <h1 className="titulo">Cadastro de Cidade</h1>
+    <div className="container">
+      <h1 style={{ color: 'yellow' }}>
+        Cadastro de Cidade
+      </h1>
 
-      <form onSubmit={handleSubmit} className="form-group">
-        <div className="form-field">
-          <label>Nome da Cidade *</label>
+      <form onSubmit={handleSalvar}>
+        <div>
+          <label>Nome:</label>
           <input
             type="text"
-            name="name"
-            value={cidade.name}
+            name="nome"
+            value={cidade.nome}
             onChange={handleChange}
             required
-            placeholder="Digite o nome da cidade"
           />
         </div>
 
-        <div className="form-field">
-          <label>Estado</label>
+        <div>
+          <label>UF:</label>
           <input
             type="text"
-            name="estado"
-            value={cidade.estado}
+            name="uf"
+            value={cidade.uf}
             onChange={handleChange}
-            placeholder="Digite o estado"
+            maxLength="2"
+            required
           />
         </div>
 
-        <div className="form-field">
-          <label>População</label>
-          <input
-            type="number"
-            name="populacao"
-            value={cidade.populacao}
-            onChange={handleChange}
-            placeholder="Digite a população"
-          />
-        </div>
+        <div style={{ marginTop: '20px' }}>
+          <button type="submit">
+            Salvar
+          </button>
 
-        <div className="form-buttons">
-          <button type="submit" className="btn btn-success">Salvar</button>
-          <button type="button" className="btn btn-secondary" onClick={() => navigate('/cidade')}>Cancelar</button>          <button type="button" className="btn-back-home" onClick={() => navigate('/')}>Voltar ao Menu</button>        </div>
+          <button
+            type="button"
+            onClick={() => navigate('/cidade')}
+            style={{ marginLeft: '10px' }}
+          >
+            Voltar
+          </button>
+        </div>
       </form>
     </div>
   );
