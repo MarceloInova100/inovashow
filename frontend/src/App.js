@@ -6,10 +6,10 @@ import './style.css';
 import HomeView from './views/HomeView';
 import CidadeView from './views/Cidade/CidadeView';
 import CidadeCadastroView from './views/Cidade/CidadeCadastroView';
-import ExpositorView from './views/ExpositorView';
-import PessoaView from './views/PessoaView';
-import VendedorView from './views/VendedorView';
-import VisitaView from './views/VisitaView';
+import ExpositorView from './views/Expositor/ExpositorView';
+import PessoaView from './views/Pessoa/PessoaView';
+import VendedorView from './views/Vendedor/VendedorView';
+import VisitaView from './views/Visita/VisitaView';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/cidade" element={<CidadeView />} />
-          <Route path="/cidade/cadastrar" element={<CidadeCadastroView />} />
+          <Route path="/cidade/cadastro" element={<CidadeCadastroView />} />
           <Route path="/expositor" element={<ExpositorView />} />
           <Route path="/pessoa" element={<PessoaView />} />
           <Route path="/vendedor" element={<VendedorView />} />

@@ -17,7 +17,26 @@ export const addCidade = async (cidade) => {
     return res.data;
   } catch (error) {
     console.error("Erro ao adicionar cidade:", error);
-
     return null;
+  }
+};
+
+export const updateCidade = async (id, cidade) => {
+  try {
+    const res = await cidadeAPI.put(`/${id}`, cidade);
+    return res.data;
+  } catch (error) {
+    console.error("Erro ao atualizar cidade:", error);
+    return null;
+  }
+};
+
+export const deleteCidade = async (id) => {
+  try {
+    await cidadeAPI.delete(`/${id}`);
+    return true;
+  } catch (error) {
+    console.error("Erro ao deletar cidade:", error);
+    return false;
   }
 };

@@ -1,41 +1,39 @@
 import { useNavigate } from 'react-router-dom';
+import './style.css';
 
 function HomeView() {
   const navigate = useNavigate();
 
+  const menuItems = [
+    { label: 'Cidades', path: '/cidade', icon: '🏙️' },
+    { label: 'Expositores', path: '/expositor', icon: '🏪' },
+    { label: 'Pessoas', path: '/pessoa', icon: '👥' },
+    { label: 'Vendedores', path: '/vendedor', icon: '💼' },
+    { label: 'Visitas', path: '/visita', icon: '📍' }
+  ];
+
   return (
     <div className='home-container'>
+      <img src='/imagem.png' alt='Inova Show Logo' className='home-image' />
+      
+      <div className='header-content'>
+        <h1 className='main-title'>Inova Show Safrinha 2026</h1>
+        <p className='subtitle'>Bem-vindo! Escolha uma opção para começar</p>
+      </div>
 
-        <div className='menu'>
-            
-            <div className="header">
-                <h1>Inova - Show</h1>
-                <p>Bem-vindo ao Inova Show Safrinha 2026!</p>
-                <p>Escolha uma opção abaixo:</p>
-            </div>
-
-            <button onClick={() => navigate('/cidade')}>
-            Cidade
-            </button>
-
-            <button onClick={() => navigate('/expositor')}>
-                Expositor
-            </button>
-
-            <button onClick={() => navigate('/pessoa')}>
-                Pessoa
-            </button>
-
-            <button onClick={() => navigate('/vendedor')}>
-                Vendedor
-            </button>
-
-            <button onClick={() => navigate('/visita')}>
-                Visita
-            </button>
-
-        </div>
-        
+      <div className='menu-grid'>
+        {menuItems.map((item, index) => (
+          <button 
+            key={index}
+            className='menu-btn'
+            onClick={() => navigate(item.path)}
+            title={item.label}
+          >
+            <span className='menu-icon'>{item.icon}</span>
+            <span className='menu-label'>{item.label}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
