@@ -283,6 +283,58 @@ button,
   cursor: pointer;
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 400px;
+  max-width: 90%;
+  padding: 12px 15px;
+  border: 2px solid #ffd700;
+  border-radius: 25px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.search-input {
+  width: 500px;
+  max-width: 90%;
+  padding: 12px 20px;
+  border: 2px solid #ffd700;
+  border-radius: 30px;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 15px #ffd700;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
 /* Form Styles */
 .form-group {
   width: 100%;
