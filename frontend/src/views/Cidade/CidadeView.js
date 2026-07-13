@@ -62,7 +62,7 @@ function CidadeView() {
           Buscar
         </button>
 
-        <button className="btn btn-warning">
+        <button className="btn btn-warning" onClick={() => navigate('/cidade/atualizar')}>
           Atualizar
         </button>
 
