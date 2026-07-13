@@ -35,49 +35,49 @@ function CidadeCadastroView() {
   };
 
   return (
-    <div className="container">
-      <h1 style={{ color: 'yellow' }}>
-        Cadastro de Cidade
-      </h1>
+    <div className="cadastro-container">
+      <div className="cadastro-card">
+        <h1>Cadastro de Cidade</h1>
 
-      <form onSubmit={handleSalvar}>
-        <div>
-          <label>Nome:</label>
-          <input
-            type="text"
-            name="nome"
-            value={cidade.nome}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <form onSubmit={handleSalvar}>
+          <div className="form-group">
+            <label>Nome</label>
+            <input
+              type="text"
+              name="nome"
+              value={cidade.nome}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div>
-          <label>UF:</label>
-          <input
-            type="text"
-            name="uf"
-            value={cidade.uf}
-            onChange={handleChange}
-            maxLength="2"
-            required
-          />
-        </div>
+          <div className="form-group">
+            <label>UF</label>
+            <input
+              type="text"
+              name="uf"
+              value={cidade.uf}
+              onChange={handleChange}
+              maxLength="2"
+              required
+            />
+          </div>
 
-        <div style={{ marginTop: '20px' }}>
-          <button type="submit">
-            Salvar
-          </button>
+          <div className="button-group">
+            <button type="submit" className="btn-salvar">
+              Salvar
+            </button>
 
-          <button
-            type="button"
-            onClick={() => navigate('/cidade')}
-            style={{ marginLeft: '10px' }}
-          >
-            Voltar
-          </button>
-        </div>
-      </form>
+            <button
+              type="button"
+              className="btn-voltar"
+              onClick={() => navigate('/cidade')}
+            >
+              Voltar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

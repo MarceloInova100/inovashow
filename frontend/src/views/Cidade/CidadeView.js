@@ -22,6 +22,12 @@ function CidadeView() {
     setCidades([...cidades, created]);
   };
 
+  
+  const abrirCadastro = () => {
+    navigate('/cidade/cadastro');
+  };
+
+
   return (
     <div className="App">
       <div>
@@ -29,14 +35,14 @@ function CidadeView() {
       </div>
       <div className="cidade-list">
       <ul>
-        {cidades.map(c => <li key={c.id}>{c.name}</li>)}
+        {cidades.map(c => <li key={c?.id}>{c?.name}</li>)}
       </ul>
       </div>
       <div className="button-container">
-        <button className="btn btn-success" onClick={handleAdd}>Criar</button>
-        <button className="btn btn-primary">Ler</button>
+        <button className="btn btn-success" onClick={abrirCadastro}>Cadastrar</button>
+        <button className="btn btn-primary">Buscar</button>
         <button className="btn btn-warning">Atualizar</button>
-        <button className="btn btn-danger">Excluir</button>
+        <button className="btn btn-danger" onClick={() => window.history.back()}>Voltar ao Menu</button>
       </div>
     </div>
 

@@ -14,10 +14,9 @@ function HomeView() {
 
   return (
     <div className='home-container'>
-      <img src='/imagem.png' alt='Inova Show Logo' className='home-image' />
+      <img src='/Inova1001.png' alt='Inova Show Logo' className='home-image' />
       
       <div className='header-content'>
-        <h1 className='main-title'>Inova Show Safrinha 2026</h1>
         <p className='subtitle'>Bem-vindo! Escolha uma opção para começar</p>
       </div>
 
